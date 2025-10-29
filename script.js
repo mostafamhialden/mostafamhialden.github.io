@@ -156,7 +156,6 @@ function validateMessage(input) {
 }
 
 function isValidEmail(email) {
-    // [!] تم الإصلاح: هذا الـ Regex يقبل جميع الإيميلات الاحترافية
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 }
