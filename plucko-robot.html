@@ -32,18 +32,68 @@
           <img src="assets/grape-training.jpg" alt="Model Training Process">
         </div>
       </div>
-      
-      <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button> <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button> <div class="gallery-dots"></div>
+      <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+      <div class="gallery-dots"></div>
     </div>
 
     <section class="section">
       <h2 data-key="pluckoSec1Title">Description: The Problem & Solution</h2>
       <p data-key="pluckoSec1Desc">
-        Grape harvesting is a labor-intensive and delicate process. "Plucko" is designed to fully automate this task using AI and robotics...
+        Grape harvesting is a labor-intensive and delicate process. "Plucko" is designed to fully automate this task using AI and robotics. I contributed to all aspects of the project, from mechanical design to developing the robot's "eyes"—an advanced computer vision system for grape detection.
       </p>
     </section>
 
-    </div>
+    <section class="section">
+        <h2 data-key="pluckoSec2Title">Key Feature: The AI Vision System</h2>
+        <p data-key="pluckoSec2Desc">
+          To power the robot, a precise vision system was essential. Based on work documented in the <a href="https://github.com/mostafamhialden/Graduation-project" target="_blank" rel="noopener">Grape Detection Project</a>, the process included:
+        </p>
+        <ul>
+            <li><strong data-key="pluckoDataCollection">Data Collection:</strong> Gathering an initial dataset of grape images in various environments.</li>
+            <li><strong data-key="pluckoAnnotation">Data Annotation:</strong> Manually annotating thousands of images to accurately label grape clusters.</li>
+            <li><strong data-key="pluckoAugmentation">Data Augmentation:</strong> Applying techniques (cropping, rotation, lighting changes) to increase data volume and ensure model robustness.</li>
+        </ul>
+      </section>
+
+    <section class="section">
+      <h2 data-key="pluckoSec3Title">Features & Technologies</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
+          <h3 data-key="pluckoFeature1Title">Mechanical Design</h3>
+          <p data-key="pluckoFeature1Desc">Designing the robot's chassis and arm, applying Forward/Inverse Kinematics (FK/IK).</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-eye"></i></div>
+          <h3 data-key="pluckoFeature2Title">Deep Learning Detection</h3>
+          <p data-key="pluckoFeature2Desc">Training and experimenting with multiple deep learning models to achieve high-accuracy detection in varied conditions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+          <h3 data-key="pluckoFeature3Title">Control Systems</h3>
+          <p data-key="pluckoFeature3Desc">Developing intelligent control systems linking "vision" (input) to the robotic arm's "action" (output).</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-link"></i></div>
+          <h3 data-key="pluckoFeature4Title">Full Integration</h3>
+          <p data-key="pluckoFeature4Desc">Merging the AI vision system with the physical robotics platform into one seamless, functional system.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-key="pluckoSec4Title">Technologies Used</h2>
+      <ul>
+        <li>Python (Core Development)</li>
+        <li>OpenCV (Image Processing)</li>
+        <li>TensorFlow / Keras (Deep Learning)</li>
+        <li>Robotics (Control Systems, Kinematics)</li>
+        <li>3D Printing (Prototyping)</li>
+        <li>Data Annotation & Augmentation</li>
+      </ul>
+    </section>
+  </div>
   
   <script src="project-script.js"></script>
   <script src="translation.js"></script>
