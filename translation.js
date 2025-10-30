@@ -34,8 +34,12 @@ const translations = {
     'project3Desc': 'بناء ودمج روبوتات محادثة ذكية باستخدام نماذج لغوية (LLMs) ومنصات مثل Rasa لأتمتة المهام والتفاعل.',
     'project4Title': 'تطوير ألعاب بـ Unity',
     'project4Desc': 'تصميم وتطوير مجموعة من الألعاب ثلاثية الأبعاد باستخدام محرك Unity ولغة C#، مع التركيز على الفيزياء واللعب.',
-    'project5Title': 'تطبيقات فلتر وصفحات وب', // <-- تعديل
-    'project5Desc': 'بناء تطبيقات هاتف متعددة المنصات باستخدام Flutter وصفحات ويب حديثة ومتجاوبة.', // <-- تعديل
+    
+    // --- !!!!  هذا هو التعديل المطلوب   !!!! ---
+    'project5Title': 'تطبيقات فلتر وصفحات وب', 
+    'project5Desc': 'بناء تطبيقات هاتف متعددة المنصات باستخدام Flutter وصفحات ويب حديثة ومتجاوبة.',
+    // --- !!!!  نهاية التعديل   !!!! ---
+
     'project6Title': 'مشاريع تعلم الآلة',
     'project6Desc': 'مجموعة من المشاريع التحليلية باستخدام Jupyter Notebooks، تغطي التنبؤ، التصنيف، وتحليل البيانات.',
     'contactTitle': 'تواصل معي',
@@ -69,7 +73,7 @@ const translations = {
     'pluckoFeature4Desc': 'دمج نظام الرؤية (AI) مع منصة الروبوتات المادية (Robotics) في نظام واحد متكامل وفعال.',
     'pluckoSec4Title': 'التقنيات المستخدمة',
 
-    // --- (مفاتيح تعلم الآلة - محدثة) ---
+    // --- (مفاتيح تعلم الآلة) ---
     'mlTitle': 'تطبيقات تعلم الآلة وعلوم البيانات',
     'mlSec1Title': 'وصف المشروع',
     'mlDesc': 'مجموعة من أعمالي التطبيقية في مجال علوم البيانات، المنفذة بشكل أساسي عبر Jupyter Notebooks. تغطي هذه المشاريع الدورة الكاملة لعلوم البيانات: من الحصول على البيانات الأولية ومعالجتها، إلى تحليل البيانات الاستكشافي (EDA)، وهندسة الميزات، وتدريب النماذج، وتقييم الأداء.',
@@ -81,7 +85,7 @@ const translations = {
     'mlFeat3Title': 'تدريب وتقييم النماذج',
     'mlFeat3Desc': 'تطبيق نماذج Scikit-Learn متنوعة (مثل الانحدار، التصنيف، والتجميع) وتقييم أدائها باستخدام المقاييس المناسبة.',
 
-    // --- (مفاتيح تطبيقات فلتر - جديدة) ---
+    // --- (مفاتيح تطبيقات فلتر) ---
     'univAppTitle': 'تطبيقات فلتر وصفحات الويب',
     'univAppDescTitle': 'الوصف',
     'univAppDesc': 'يعرض هذا القسم مهاراتي في بناء تطبيقات حديثة ومتجاوبة لمنصات الموبايل والويب. باستخدام Flutter، أقوم بإنشاء تطبيقات متعددة المنصات تعمل بسلاسة على iOS و Android من قاعدة كود واحدة. وفي نفس الوقت، أقوم بتطوير صفحات ويب ولوحات تحكم ثابتة وديناميكية باستخدام تقنيات الويب الأساسية.',
@@ -93,7 +97,6 @@ const translations = {
     'univAppFeat3Title': 'تكامل قواعد البيانات',
     'univAppFeat3Desc': 'ربط واجهات الموبايل والويب الأمامية بقواعد بيانات (مثل SQL أو Firebase) لإدارة البيانات في الوقت الفعلي وبناء تطبيقات متكاملة.',
     'univAppTechTitle': 'التقنيات المستخدمة',
-
   },
   
   // ------------------
@@ -129,8 +132,12 @@ const translations = {
     'project3Desc': 'Building and integrating smart chatbots using LLMs and platforms like Rasa for task automation and interaction.',
     'project4Title': 'Unity Game Development',
     'project4Desc': 'Designing and developing a range of 3D games using the Unity engine and C#, focusing on physics and gameplay.',
-    'project5Title': 'Flutter Apps & Web Pages', // <-- تعديل
-    'project5Desc': 'Building cross-platform mobile apps with Flutter and modern, responsive web pages and dashboards.', // <-- تعديل
+
+    // --- !!!!  هذا هو التعديل المطلوب   !!!! ---
+    'project5Title': 'Flutter Apps & Web Pages', 
+    'project5Desc': 'Building cross-platform mobile apps with Flutter and modern, responsive web pages and dashboards.',
+    // --- !!!!  نهاية التعديل   !!!! ---
+
     'project6Title': 'Machine Learning Projects',
     'project6Desc': 'A collection of analytical projects using Jupyter Notebooks, covering prediction, classification, and data analysis.',
     'contactTitle': 'Contact Me',
@@ -164,7 +171,7 @@ const translations = {
     'pluckoFeature4Desc': 'Merging the AI vision system with the physical robotics platform into one seamless, functional system.',
     'pluckoSec4Title': 'Technologies Used',
 
-    // --- (ML Notebooks - Updated) ---
+    // --- (ML Notebooks) ---
     'mlTitle': 'Applied Machine Learning & Data Science',
     'mlSec1Title': 'Project Description',
     'mlDesc': 'This collection represents my practical work in data science, primarily executed within Jupyter Notebooks. These projects cover the full data science lifecycle: from acquiring and preprocessing raw data to exploratory data analysis (EDA), feature engineering, model training, and performance evaluation.',
@@ -176,7 +183,7 @@ const translations = {
     'mlFeat3Title': 'Model Training & Evaluation',
     'mlFeat3Desc': 'Applying various Scikit-Learn models (e.g., Regression, Classification, Clustering) and evaluating their performance using appropriate metrics.',
 
-    // --- (Flutter App - New) ---
+    // --- (Flutter App) ---
     'univAppTitle': 'Flutter Apps & Web Pages',
     'univAppDescTitle': 'Description',
     'univAppDesc': 'This category showcases my skills in building modern, responsive applications for both mobile and web platforms. Using Flutter, I create cross-platform mobile apps that run smoothly on iOS and Android from a single codebase. Simultaneously, I develop static and dynamic web pages and dashboards using core web technologies.',
