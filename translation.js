@@ -16,7 +16,7 @@ const translations = {
     'btnContact': 'تواصل معي',
     'aboutTitle': 'نبذة عني',
     'aboutP1': 'أنا مبرمج ذكاء اصطناعي حاصل على دبلوم في الذكاء الاصطناعي والروبوتات من DTC. حالياً، أتابع دراسة هندسة تقانة المعلومات في SVU.',
-    'aboutP2': 'لدي خبرة كقائد فريق لمشاريع ذكاء اصطناعي عن بُعد، ومدرب ذكاء اصطناعي للطلاب، ومدرب روبوتات لمبادرات الشباب، إلى جانب عملي الحر في الذكاء اصطناعي وتطوير التطبيقات.',
+    'aboutP2': 'لدي خبرة كقائد فريق لمشاريع ذكاء اصطناعي عن بُعد، ومدرب ذكاء اصطناعي للطلاب، ومدرب روبوتات لمبادرات الشباب، إلى جانب عملي الحر في الذكاء الاصطناعي وتطوير التطبيقات.',
     'skillsTitle': 'المهارات',
     'skill1Title': 'الذكاء الاصطناعي وتعلم الآلة',
     'skill2Title': 'الرؤية الحاسوبية',
@@ -26,7 +26,18 @@ const translations = {
     'skill6Title': 'البرمجة',
     'projectsTitle': 'المشاريع',
     'projectLink': 'عرض المشروع →',
-    // ... (أضف مفاتيح باقي المشاريع هنا بنفسك) ...
+    'project1Title': 'روبوت Plucko لقطف العنب',
+    'project1Desc': 'تطوير روبوت متكامل لقطف العنب آلياً باستخدام الرؤية الحاسوبية، الذكاء الاصطناعي، وأنظمة التحكم المتقدمة.',
+    'project2Title': 'عميل ذكاء اصطناعي للتحكم بالويب',
+    'project2Desc': 'قيادة فريق لتطوير عميل ذكاء اصطناعي (AI Agent) قادر على التحكم بصفحات الويب وأتمتتها عبر دمج نماذج متعددة.',
+    'project3Title': 'تطوير روبوتات الدردشة (Bots)',
+    'project3Desc': 'بناء ودمج روبوتات محادثة ذكية باستخدام نماذج لغوية (LLMs) ومنصات مثل Rasa لأتمتة المهام والتفاعل.',
+    'project4Title': 'تطوير ألعاب بـ Unity',
+    'project4Desc': 'تصميم وتطوير مجموعة من الألعاب ثلاثية الأبعاد باستخدام محرك Unity ولغة C#، مع التركيز على الفيزياء واللعب.',
+    'project5Title': 'تطبيق إدارة جامعية',
+    'project5Desc': 'بناء تطبيق هاتف لإدارة الفصول ومعلومات الطلاب باستخدام Flutter، مع ربط الواجهات بقاعدة البيانات.',
+    'project6Title': 'مشاريع تعلم الآلة',
+    'project6Desc': 'مجموعة من المشاريع التحليلية باستخدام Jupyter Notebooks، تغطي التنبؤ، التصنيف، وتحليل البيانات.',
     'contactTitle': 'تواصل معي',
     'contactEmail': 'البريد الإلكتروني',
     'contactPhone': 'الهاتف',
@@ -85,7 +96,18 @@ const translations = {
     'skill6Title': 'Programming',
     'projectsTitle': 'Projects',
     'projectLink': 'View Project →',
-    // ... (add other project keys) ...
+    'project1Title': 'Plucko Grape-Picking Robot',
+    'project1Desc': 'Developing an integrated robot for automated grape harvesting using computer vision, AI, and advanced control systems.',
+    'project2Title': 'AI Agent for Web Control',
+    'project2Desc': 'Leading a team to develop an AI Agent capable of controlling and automating web pages by integrating multiple models.',
+    'project3Title': 'Chatbot Development (Bots)',
+    'project3Desc': 'Building and integrating smart chatbots using LLMs and platforms like Rasa for task automation and interaction.',
+    'project4Title': 'Unity Game Development',
+    'project4Desc': 'Designing and developing a range of 3D games using the Unity engine and C#, focusing on physics and gameplay.',
+    'project5Title': 'University Management App',
+    'project5Desc': 'Building a mobile app to manage classes and student info using Flutter, linking UI to a database.',
+    'project6Title': 'Machine Learning Projects',
+    'project6Desc': 'A collection of analytical projects using Jupyter Notebooks, covering prediction, classification, and data analysis.',
     'contactTitle': 'Contact Me',
     'contactEmail': 'Email',
     'contactPhone': 'Phone',
@@ -116,7 +138,7 @@ const translations = {
     'pluckoFeature4Title': 'Full Integration',
     'pluckoFeature4Desc': 'Merging the AI vision system with the physical robotics platform into one seamless, functional system.',
     'pluckoSec4Title': 'Technologies Used',
-    // ... (add other project page keys) ...
+    // ... (أضف باقي مفاتيح صفحات المشاريع هنا) ...
   }
 };
 

@@ -370,6 +370,7 @@ html[dir="rtl"] .project-link {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    align-items: start; /* محاذاة العناصر للأعلى */
 }
 
 /* (تم الإبقاء على هذا القسم) */
@@ -417,7 +418,8 @@ html[dir="rtl"] .project-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* البدء من الأعلى */
+    height: 100%; /* لملء ارتفاع الشبكة */
 }
 
 .contact-subtitle {
