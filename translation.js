@@ -34,8 +34,8 @@ const translations = {
     'project3Desc': 'بناء ودمج روبوتات محادثة ذكية باستخدام نماذج لغوية (LLMs) ومنصات مثل Rasa لأتمتة المهام والتفاعل.',
     'project4Title': 'تطوير ألعاب بـ Unity',
     'project4Desc': 'تصميم وتطوير مجموعة من الألعاب ثلاثية الأبعاد باستخدام محرك Unity ولغة C#، مع التركيز على الفيزياء واللعب.',
-    'project5Title': 'تطبيق إدارة جامعية',
-    'project5Desc': 'بناء تطبيق هاتف لإدارة الفصول ومعلومات الطلاب باستخدام Flutter، مع ربط الواجهات بقاعدة البيانات.',
+    'project5Title': 'تطبيقات فلتر وصفحات وب', // <-- تعديل
+    'project5Desc': 'بناء تطبيقات هاتف متعددة المنصات باستخدام Flutter وصفحات ويب حديثة ومتجاوبة.', // <-- تعديل
     'project6Title': 'مشاريع تعلم الآلة',
     'project6Desc': 'مجموعة من المشاريع التحليلية باستخدام Jupyter Notebooks، تغطي التنبؤ، التصنيف، وتحليل البيانات.',
     'contactTitle': 'تواصل معي',
@@ -49,7 +49,7 @@ const translations = {
     // --- (صفحات المشاريع) ---
     'backToProjects': '→ العودة لجميع المشاريع',
     
-    // --- (إصلاح ملف بلكو) ---
+    // --- (مفاتيح بلكو) ---
     'pluckoTitle': 'روبوت Plucko لقطف العنب بالذكاء الاصطناعي',
     'pluckoSec1Title': 'الوصف: المشكلة والحل',
     'pluckoSec1Desc': 'يُعد قطف العنب عملية تتطلب عمالة مكثفة ودقة عالية. تم تصميم روبوت "Plucko" لأتمتة هذه العملية بالكامل باستخدام الذكاء الاصطناعي والروبوتات. ساهمت في جميع جوانب المشروع، بدءاً من التصميم الميكانيكي وحتى تطوير "عيون" الروبوت، وهو نظام رؤية حاسوبية متقدم لاكتشاف العنب.',
@@ -69,16 +69,31 @@ const translations = {
     'pluckoFeature4Desc': 'دمج نظام الرؤية (AI) مع منصة الروبوتات المادية (Robotics) في نظام واحد متكامل وفعال.',
     'pluckoSec4Title': 'التقنيات المستخدمة',
 
-    // --- (إضافة جديدة لمشروع تعلم الآلة) ---
+    // --- (مفاتيح تعلم الآلة - محدثة) ---
+    'mlTitle': 'تطبيقات تعلم الآلة وعلوم البيانات',
     'mlSec1Title': 'وصف المشروع',
-    'mlSec2Title': 'الميزات والتقنيات',
-    'mlFeat1Title': 'تحليل البيانات',
-    'mlFeat1Desc': 'استخدام Pandas و Numpy لتنظيف ومعالجة واستكشاف البيانات.',
-    'mlFeat2Title': 'تعلم الآلة',
-    'mlFeat2Desc': 'تطبيق نماذج من Scikit-Learn لمهام مثل الانحدار والتصنيف.',
-    'mlFeat3Title': 'تصوير البيانات',
-    'mlFeat3Desc': 'استخدام Matplotlib و Seaborn لإنشاء رسوم بيانية توضيحية.',
-    // ... (أضف باقي مفاتيح صفحات المشاريع هنا) ...
+    'mlDesc': 'مجموعة من أعمالي التطبيقية في مجال علوم البيانات، المنفذة بشكل أساسي عبر Jupyter Notebooks. تغطي هذه المشاريع الدورة الكاملة لعلوم البيانات: من الحصول على البيانات الأولية ومعالجتها، إلى تحليل البيانات الاستكشافي (EDA)، وهندسة الميزات، وتدريب النماذج، وتقييم الأداء.',
+    'mlSec2Title': 'المهارات والمنهجيات الرئيسية',
+    'mlFeat1Title': 'تحليل البيانات الاستكشافي (EDA)',
+    'mlFeat1Desc': 'استخدام Pandas و Numpy لتنظيف وتحويل وتحليل مجموعات البيانات. واستخدام أدوات مثل Matplotlib و Seaborn لكشف الأنماط المخفية.',
+    'mlFeat2Title': 'هندسة الميزات والمعالجة المسبقة',
+    'mlFeat2Desc': 'خبرة في اختيار وتحويل وإنشاء ميزات جديدة من البيانات الأولية لتحسين دقة وأداء النموذج.',
+    'mlFeat3Title': 'تدريب وتقييم النماذج',
+    'mlFeat3Desc': 'تطبيق نماذج Scikit-Learn متنوعة (مثل الانحدار، التصنيف، والتجميع) وتقييم أدائها باستخدام المقاييس المناسبة.',
+
+    // --- (مفاتيح تطبيقات فلتر - جديدة) ---
+    'univAppTitle': 'تطبيقات فلتر وصفحات الويب',
+    'univAppDescTitle': 'الوصف',
+    'univAppDesc': 'يعرض هذا القسم مهاراتي في بناء تطبيقات حديثة ومتجاوبة لمنصات الموبايل والويب. باستخدام Flutter، أقوم بإنشاء تطبيقات متعددة المنصات تعمل بسلاسة على iOS و Android من قاعدة كود واحدة. وفي نفس الوقت، أقوم بتطوير صفحات ويب ولوحات تحكم ثابتة وديناميكية باستخدام تقنيات الويب الأساسية.',
+    'univAppFeatTitle': 'الميزات الرئيسية',
+    'univAppFeat1Title': 'متعدد المنصات (Flutter)',
+    'univAppFeat1Desc': 'تطوير تطبيقات موبايل عالية الأداء لنظامي iOS و Android باستخدام Flutter و Dart، مما يضمن إحساساً أصلياً ودورات تطوير سريعة.',
+    'univAppFeat2Title': 'تصميم ويب متجاوب',
+    'univAppFeat2Desc': 'بناء صفحات ويب وملفات شخصية نظيفة وحديثة ومتجاوبة (مثل هذا الموقع) باستخدام HTML, CSS, و JavaScript.',
+    'univAppFeat3Title': 'تكامل قواعد البيانات',
+    'univAppFeat3Desc': 'ربط واجهات الموبايل والويب الأمامية بقواعد بيانات (مثل SQL أو Firebase) لإدارة البيانات في الوقت الفعلي وبناء تطبيقات متكاملة.',
+    'univAppTechTitle': 'التقنيات المستخدمة',
+
   },
   
   // ------------------
@@ -114,8 +129,8 @@ const translations = {
     'project3Desc': 'Building and integrating smart chatbots using LLMs and platforms like Rasa for task automation and interaction.',
     'project4Title': 'Unity Game Development',
     'project4Desc': 'Designing and developing a range of 3D games using the Unity engine and C#, focusing on physics and gameplay.',
-    'project5Title': 'University Management App',
-    'project5Desc': 'Building a mobile app to manage classes and student info using Flutter, linking UI to a database.',
+    'project5Title': 'Flutter Apps & Web Pages', // <-- تعديل
+    'project5Desc': 'Building cross-platform mobile apps with Flutter and modern, responsive web pages and dashboards.', // <-- تعديل
     'project6Title': 'Machine Learning Projects',
     'project6Desc': 'A collection of analytical projects using Jupyter Notebooks, covering prediction, classification, and data analysis.',
     'contactTitle': 'Contact Me',
@@ -149,16 +164,30 @@ const translations = {
     'pluckoFeature4Desc': 'Merging the AI vision system with the physical robotics platform into one seamless, functional system.',
     'pluckoSec4Title': 'Technologies Used',
 
-    // --- (New addition for ML project) ---
+    // --- (ML Notebooks - Updated) ---
+    'mlTitle': 'Applied Machine Learning & Data Science',
     'mlSec1Title': 'Project Description',
-    'mlSec2Title': 'Features & Technologies',
-    'mlFeat1Title': 'Data Analysis',
-    'mlFeat1Desc': 'Using Pandas and Numpy for data cleaning, manipulation, and exploration.',
-    'mlFeat2Title': 'Machine Learning',
-    'mlFeat2Desc': 'Applying models from Scikit-Learn for tasks like regression and classification.',
-    'mlFeat3Title': 'Data Visualization',
-    'mlFeat3Desc': 'Using Matplotlib and Seaborn to create insightful plots and charts from data.',
-    // ... (add other project page keys) ...
+    'mlDesc': 'This collection represents my practical work in data science, primarily executed within Jupyter Notebooks. These projects cover the full data science lifecycle: from acquiring and preprocessing raw data to exploratory data analysis (EDA), feature engineering, model training, and performance evaluation.',
+    'mlSec2Title': 'Key Skills & Methodologies',
+    'mlFeat1Title': 'Exploratory Data Analysis (EDA)',
+    'mlFeat1Desc': 'Utilizing Pandas and Numpy to clean, transform, and analyze datasets. Using visualization tools like Matplotlib & Seaborn to uncover hidden patterns.',
+    'mlFeat2Title': 'Feature Engineering & Preprocessing',
+    'mlFeat2Desc': 'Skillfully selecting, transforming, and creating new features from raw data to improve model accuracy and performance.',
+    'mlFeat3Title': 'Model Training & Evaluation',
+    'mlFeat3Desc': 'Applying various Scikit-Learn models (e.g., Regression, Classification, Clustering) and evaluating their performance using appropriate metrics.',
+
+    // --- (Flutter App - New) ---
+    'univAppTitle': 'Flutter Apps & Web Pages',
+    'univAppDescTitle': 'Description',
+    'univAppDesc': 'This category showcases my skills in building modern, responsive applications for both mobile and web platforms. Using Flutter, I create cross-platform mobile apps that run smoothly on iOS and Android from a single codebase. Simultaneously, I develop static and dynamic web pages and dashboards using core web technologies.',
+    'univAppFeatTitle': 'Key Features',
+    'univAppFeat1Title': 'Cross-Platform (Flutter)',
+    'univAppFeat1Desc': 'Developing high-performance mobile apps for iOS and Android using Flutter and Dart, ensuring a native feel and fast development cycles.',
+    'univAppFeat2Title': 'Responsive Web Design',
+    'univAppFeat2Desc': 'Building clean, modern, and responsive web pages and portfolios (like this one) using HTML, CSS, and JavaScript.',
+    'univAppFeat3Title': 'Database Integration',
+    'univAppFeat3Desc': 'Linking both mobile and web front-ends to databases (like SQL or Firebase) to manage data in real-time and build full-stack applications.',
+    'univAppTechTitle': 'Technologies Used',
   }
 };
 

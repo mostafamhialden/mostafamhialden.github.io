@@ -1,71 +1,78 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تطبيق إدارة جامعية</title>
+  <title>Flutter Apps & Web Pages</title>
   <link rel="stylesheet" href="project-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <a href="index.html#projects" class="back-link">→ العودة لجميع المشاريع</a>
-  <div class="container">
+  
+  <div class="project-nav">
+    <a href="index.html#projects" class="back-link" data-key="backToProjects">→ Back to All Projects</a>
+    <button id="lang-toggle-btn" class="lang-btn">العربية</button>
+  </div>
 
-    <h1 class="title">تطبيق إدارة جامعية</h1>
+  <div class="container">
+    <h1 class="title" data-key="univAppTitle">Flutter Applications & Web Pages</h1>
 
     <div class="image-gallery">
       <div class="gallery-container">
         <div class="gallery-slide active">
-          <img src="assets/uni-app-1.jpg" alt="لقطة شاشة للتطبيق 1">
+          <img src="assets/uni-app-1.jpg" alt="App Screenshot 1">
         </div>
         <div class="gallery-slide">
-          <img src="assets/uni-app-2.jpg" alt="لقطة شاشة للتطبيق 2">
+          <img src="assets/uni-app-2.jpg" alt="App Screenshot 2">
         </div>
       </div>
-      <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-right"></i></button>
-      <button class="gallery-nav gallery-next"><i class="fas fa-chevron-left"></i></button>
+      <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
       <div class="gallery-dots"></div>
     </div>
 
     <section class="section">
-      <h2>الوصف</h2>
-      <p>
-        بناء تطبيق هاتف محمول مصمم لإدارة الفصول الدراسية ومعلومات الطلاب.
-        ركز المشروع على ربط واجهات المستخدم الرسومية بقاعدة البيانات لإنشاء تجربة إدارة سلسة وفعالة.
+      <h2 data-key="univAppDescTitle">Description</h2>
+      <p data-key="univAppDesc">
+        This category showcases my skills in building modern, responsive applications for both mobile and web platforms. Using Flutter, I create cross-platform mobile apps that run smoothly on iOS and Android from a single codebase. Simultaneously, I develop static and dynamic web pages and dashboards using core web technologies.
       </p>
     </section>
 
     <section class="section">
-      <h2>الميزات الرئيسية</h2>
+      <h2 data-key="univAppFeatTitle">Key Features</h2>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon"><i class="fab fa-flutter"></i></div>
-          <h3>تطوير متعدد المنصات</h3>
-          <p>تم التطوير باستخدام Flutter و Dart، مما يسمح للتطبيق بالعمل على نظامي iOS و Android من كود مصدري واحد.</p>
+          <h3 data-key="univAppFeat1Title">Cross-Platform (Flutter)</h3>
+          <p data-key="univAppFeat1Desc">Developing high-performance mobile apps for iOS and Android using Flutter and Dart, ensuring a native feel and fast development cycles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-desktop"></i></div>
+          <h3 data-key="univAppFeat2Title">Responsive Web Design</h3>
+          <p data-key="univAppFeat2Desc">Building clean, modern, and responsive web pages and portfolios (like this one) using HTML, CSS, and JavaScript.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><i class="fas fa-database"></i></div>
-          <h3>تكامل قاعدة البيانات</h3>
-          <p>ربط جميع واجهات المستخدم ومنطق التطبيق مباشرة بقاعدة البيانات لإدارة المعلومات في الوقت الفعلي.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-user-cog"></i></div>
-          <h3>إدارة الطلاب</h3>
-          <p>تضمنت الوظيفة الأساسية إدارة معلومات الطلاب، والجداول الزمنية، وبيانات الفصول الدراسية بفعالية.</p>
+          <h3 data-key="univAppFeat3Title">Database Integration</h3>
+          <p data-key="univAppFeat3Desc">Linking both mobile and web front-ends to databases (like SQL or Firebase) to manage data in real-time and build full-stack applications.</p>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>التقنيات المستخدمة</h2>
+      <h2 data-key="univAppTechTitle">Technologies Used</h2>
       <ul>
         <li>Flutter</li>
         <li>Dart</li>
-        <li>SQL (Database)</li>
-        <li>Mobile App Development</li>
+        <li>HTML5</li>
+        <li>CSS3 (incl. Flexbox, Grid)</li>
+        <li>JavaScript (ES6+)</li>
+        <li>SQL & Database Management</li>
       </ul>
     </section>
   </div>
+  
   <script src="project-script.js"></script>
+  <script src="translation.js"></script>
 </body>
 </html>
