@@ -28,7 +28,7 @@ class EnhancedImageGallery {
         this.createCounter();
         this.createDots();
         this.addEventListeners();
-        this.updateSlides();
+        this.updateSlides(); // تم تغيير اسمها من goToSlide(0) لاسم أوضح
         this.startAutoPlay();
     }
     
@@ -60,6 +60,7 @@ class EnhancedImageGallery {
         this.gallery.addEventListener('mouseleave', () => this.startAutoPlay());
 
         document.addEventListener('keydown', (e) => {
+            // تحديث منطق الأسهم ليعكس LTR/RTL
             if (e.key === 'ArrowLeft') this.isRTL ? this.nextSlide() : this.prevSlide();
             if (e.key === 'ArrowRight') this.isRTL ? this.prevSlide() : this.nextSlide();
         });
@@ -81,6 +82,7 @@ class EnhancedImageGallery {
             const diff = startX - endX;
             
             if (Math.abs(diff) > 50) {
+                 // تحديث منطق السحب ليعكس LTR/RTL
                 if (diff > 0) this.isRTL ? this.prevSlide() : this.nextSlide();
                 else this.isRTL ? this.nextSlide() : this.prevSlide();
             }
@@ -88,9 +90,13 @@ class EnhancedImageGallery {
         });
     }
     
-    goToSlide(index) {
-        this.currentSlide = (index + this.totalSlides) % this.totalSlides;
-        
+    // تم تغيير اسم الدالة من goToSlide(index) إلى updateSlides(index)
+    // وجعل index اختيارياً
+    updateSlides(index) {
+        if (index !== undefined) {
+             this.currentSlide = (index + this.totalSlides) % this.totalSlides;
+        }
+       
         const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
         const nextIndex = (this.currentSlide + 1) % this.totalSlides;
 
@@ -109,6 +115,10 @@ class EnhancedImageGallery {
         
         this.updateCounter();
         this.handleVideo();
+    }
+
+    goToSlide(index) {
+        this.updateSlides(index);
     }
     
     handleVideo() {
@@ -167,5 +177,21 @@ class EnhancedImageGallery {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // تحديث ليتوافق مع التغييرات في i18n
+    // يجب أن يعمل محرك الترجمة أولاً لتحديث dir
+    // لذلك، سيتم استدعاء هذا من داخل translation.js
+    // أو نتأكد من أن اتجاه الصفحة صحيح عند التحميل
+    
+    // بسيط: فقط تأكد من أن اتجاه الصفحة يتم تحديده قبل هذا السكريبت
+    // الكود في translation.js سيعمل أولاً إذا تم تحميله أولاً
+    // ولكننا نعتمد على السمة الموجودة في <html>
+    
+    // تحديث: كود project-script.js الآن يقرأ اتجاه الصفحة
+    // عند الإنشاء، وكود translation.js يغيره.
+    // يجب أن نضمن أن يتم تحديث اتجاه الصفحة قبل إنشاء الكائن
+    
+    // الحل: نستدعي هذا بعد انتهاء تحميل كل شيء
+    // الكود في translation.js يعمل على DOMContentLoaded
+    // لذلك هذا الكود سيعمل أيضاً ويقرأ الاتجاه المحدث
     new EnhancedImageGallery();
 });

@@ -92,6 +92,31 @@ nav ul li a.active::after {
     width: 80%;
 }
 
+/* --- زر تبديل اللغة --- */
+.lang-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+    margin-left: 15px;
+}
+
+html[dir="rtl"] .lang-btn {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent);
+    color: var(--nav-bg);
+}
+
+
 /* Home section */
 .home {
     display: flex;
@@ -333,7 +358,7 @@ section {
 .project-link {
     color: var(--accent);
     font-weight: 600;
-    text-align: left; /* Changed for RTL */
+    text-align: left;
 }
 
 html[dir="rtl"] .project-link {
@@ -505,8 +530,7 @@ footer {
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
-    left: 30px; /* Changed for RTL */
-    right: auto;
+    right: 30px;
     background: var(--primary);
     color: white;
     width: 50px;
@@ -554,6 +578,10 @@ html[dir="rtl"] .scroll-to-top {
     .logo {
         margin-bottom: 15px;
     }
+    
+    .lang-btn {
+        margin-top: 15px;
+    }
 
     .home-content {
         flex-direction: column;
@@ -597,7 +625,7 @@ html[dir="rtl"] .scroll-to-top {
 
     .scroll-to-top {
         bottom: 20px;
-        left: 20px; /* Changed for RTL */
+        right: 20px;
     }
     
     html[dir="rtl"] .scroll-to-top {

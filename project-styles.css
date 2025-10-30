@@ -22,9 +22,19 @@ body {
   padding: 20px;
 }
 
+/* --- شريط التنقل في صفحة المشروع --- */
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* للتجاوب */
+}
+
 .back-link {
-    display: inline-block;
-    margin: 20px 0 0 20px;
+    margin: 0;
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
@@ -33,6 +43,25 @@ body {
 .back-link:hover {
     text-decoration: underline;
 }
+
+.lang-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent);
+    color: var(--nav-bg);
+}
+/* --- نهاية شريط التنقل --- */
+
 
 .title {
   text-align: center;
@@ -82,7 +111,7 @@ html[dir="rtl"] .section {
   padding: 12px 0;
   color: var(--text-secondary);
   position: relative;
-  padding-right: 35px; /* RTL */
+  padding-left: 35px; /* LTR */
   font-size: 1.1rem;
   border-bottom: 1px solid rgba(99, 218, 252, 0.1);
   transition: color 0.3s ease;
@@ -101,7 +130,7 @@ html[dir="rtl"] .section li {
   content: "▸";
   color: var(--accent);
   position: absolute;
-  right: 0; /* RTL */
+  left: 0; /* LTR */
   font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
@@ -112,6 +141,10 @@ html[dir="rtl"] .section li:before {
 }
 
 .section li:hover:before {
+  transform: translateX(5px); /* LTR */
+}
+
+html[dir="rtl"] .section li:hover:before {
   transform: translateX(-5px); /* RTL */
 }
 
@@ -174,14 +207,14 @@ html[dir="rtl"] .section li:before {
 
 .gallery-slide.prev-slide {
   opacity: 0.4;
-  transform: translateX(80%) scale(0.8); /* RTL */
+  transform: translateX(-80%) scale(0.8); /* LTR */
   z-index: 2;
   filter: blur(2px);
 }
 
 .gallery-slide.next-slide {
   opacity: 0.4;
-  transform: translateX(-80%) scale(0.8); /* RTL */
+  transform: translateX(80%) scale(0.8); /* LTR */
   z-index: 2;
   filter: blur(2px);
 }
@@ -237,8 +270,11 @@ html[dir="rtl"] .gallery-slide.next-slide {
   width: 80px;
 }
 
-.gallery-prev { right: 20px; left: auto; } /* RTL */
-.gallery-next { left: 20px; right: auto; } /* RTL */
+.gallery-prev { left: 20px; } /* LTR */
+.gallery-next { right: 20px; } /* LTR */
+
+html[dir="rtl"] .gallery-prev { right: 20px; left: auto; }
+html[dir="rtl"] .gallery-next { left: 20px; right: auto; }
 
 .gallery-dots {
   display: flex;
@@ -270,8 +306,7 @@ html[dir="rtl"] .gallery-slide.next-slide {
 .gallery-counter {
   position: absolute;
   top: 20px;
-  left: 20px; /* RTL */
-  right: auto;
+  left: 20px; /* LTR */
   background: rgba(44, 57, 76, 0.8);
   color: var(--accent);
   padding: 8px 16px;
@@ -281,6 +316,11 @@ html[dir="rtl"] .gallery-slide.next-slide {
   z-index: 5;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(99, 218, 252, 0.2);
+}
+
+html[dir="rtl"] .gallery-counter {
+  left: auto;
+  right: 20px;
 }
 
 /* Features Section */
@@ -357,8 +397,10 @@ html[dir="rtl"] .gallery-slide.next-slide {
   .gallery-container { height: 400px; }
   .gallery-nav { width: 50px; height: 80px; }
   .gallery-nav:hover { width: 55px; }
-  .gallery-prev { right: 10px; } /* RTL */
-  .gallery-next { left: 10px; } /* RTL */
+  .gallery-prev { left: 10px; } /* LTR */
+  .gallery-next { right: 10px; } /* LTR */
+  html[dir="rtl"] .gallery-prev { right: 10px; left: auto; }
+  html[dir="rtl"] .gallery-next { left: 10px; right: auto; }
   .title { font-size: 2rem; }
   .section { padding: 25px; }
 }

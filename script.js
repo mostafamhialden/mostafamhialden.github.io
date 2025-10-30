@@ -27,29 +27,36 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const country = document.getElementById('country').value.trim();
             const message = document.getElementById('message').value.trim();
             
-            if (!validateForm(name, email, message)) {
+            if (!validateForm(name, email, whatsapp, country, message)) {
                 return;
             }
             
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = '...جار الإرسال';
+            
+            // تحقق من اللغة الحالية لرسالة "جار الإرسال"
+            const currentLang = localStorage.getItem('language') || 'en';
+            submitBtn.textContent = (currentLang === 'ar') ? '...جار الإرسال' : '...Sending';
             submitBtn.disabled = true;
             
-            sendEmail(name, email, message)
+            sendEmail(name, email, whatsapp, country, message)
                 .then(() => {
-                    showFormMessage('شكراً لك! تم إرسال رسالتك بنجاح.', 'success');
+                    const successMsg = (currentLang === 'ar') ? 'شكراً لك! تم إرسال رسالتك بنجاح.' : 'Thank you! Your message has been sent successfully.';
+                    showFormMessage(successMsg, 'success');
                     this.reset();
                     clearAllFieldErrors();
                 })
                 .catch(error => {
                     console.error('Error sending email:', error);
-                    showFormMessage('عذراً، حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة لاحقاً.', 'error');
+                    const errorMsg = (currentLang === 'ar') ? 'عذراً، حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة لاحقاً.' : 'Sorry, an error occurred while sending your message. Please try again later.';
+                    showFormMessage(errorMsg, 'error');
                 })
                 .finally(() => {
-                    submitBtn.textContent = originalText;
+                    submitBtn.textContent = originalText; // النص الأصلي (الذي تمت ترجمته مسبقاً)
                     submitBtn.disabled = false;
                 });
         });
@@ -57,9 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Real-time validation
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
+        const whatsappInput = document.getElementById('whatsapp');
+        const countryInput = document.getElementById('country');
         const messageInput = document.getElementById('message');
         if(nameInput) nameInput.addEventListener('input', () => validateName(nameInput));
         if(emailInput) emailInput.addEventListener('input', () => validateEmail(emailInput));
+        if(whatsappInput) whatsappInput.addEventListener('input', () => validateWhatsapp(whatsappInput));
+        if(countryInput) countryInput.addEventListener('input', () => validateCountry(countryInput));
         if(messageInput) messageInput.addEventListener('input', () => validateMessage(messageInput));
     }
 
@@ -105,21 +116,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Form validation functions
-function validateForm(name, email, message) {
+function validateForm(name, email, whatsapp, country, message) {
     let isValid = true;
     isValid = validateName(document.getElementById('name')) && isValid;
     isValid = validateEmail(document.getElementById('email')) && isValid;
+    isValid = validateWhatsapp(document.getElementById('whatsapp')) && isValid;
+    isValid = validateCountry(document.getElementById('country')) && isValid;
     isValid = validateMessage(document.getElementById('message')) && isValid;
     return isValid;
 }
 
 function validateName(input) {
     const value = input.value.trim();
+    const currentLang = localStorage.getItem('language') || 'en';
     if (!value) {
-        showFieldError('name', 'الاسم مطلوب');
+        showFieldError('name', (currentLang === 'ar') ? 'الاسم مطلوب' : 'Name is required');
         return false;
-    } else if (!/^[A-Za-z\s\u0600-\u06FF]+$/.test(value)) { // Added Arabic characters
-        showFieldError('name', 'يجب أن يحتوي الاسم على أحرف ومسافات فقط');
+    } else if (!/^[A-Za-z\s\u0600-\u06FF]+$/.test(value)) {
+        showFieldError('name', (currentLang === 'ar') ? 'يجب أن يحتوي الاسم على أحرف ومسافات فقط' : 'Name must contain only letters and spaces');
         return false;
     } else {
         clearFieldError('name');
@@ -129,11 +143,12 @@ function validateName(input) {
 
 function validateEmail(input) {
     const value = input.value.trim();
+    const currentLang = localStorage.getItem('language') || 'en';
     if (!value) {
-        showFieldError('email', 'البريد الإلكتروني مطلوب');
+        showFieldError('email', (currentLang === 'ar') ? 'البريد الإلكتروني مطلوب' : 'Email is required');
         return false;
     } else if (!isValidEmail(value)) {
-        showFieldError('email', 'الرجاء إدخال بريد إلكتروني صالح');
+        showFieldError('email', (currentLang === 'ar') ? 'الرجاء إدخال بريد إلكتروني صالح' : 'Please enter a valid email address');
         return false;
     } else {
         clearFieldError('email');
@@ -141,13 +156,43 @@ function validateEmail(input) {
     }
 }
 
+function validateWhatsapp(input) {
+    const value = input.value.trim();
+    const currentLang = localStorage.getItem('language') || 'en';
+    const phoneRegex = /^\+?[0-9\s-]{7,}$/; 
+    if (!value) {
+        showFieldError('whatsapp', (currentLang === 'ar') ? 'رقم الواتساب مطلوب' : 'WhatsApp number is required');
+        return false;
+    } else if (!phoneRegex.test(value)) {
+        showFieldError('whatsapp', (currentLang === 'ar') ? 'الرجاء إدخال رقم هاتف صالح (مع رمز الدولة)' : 'Please enter a valid phone number (with country code)');
+        return false;
+    } else {
+        clearFieldError('whatsapp');
+        return true;
+    }
+}
+
+function validateCountry(input) {
+    const value = input.value.trim();
+    const currentLang = localStorage.getItem('language') || 'en';
+    if (!value) {
+        showFieldError('country', (currentLang === 'ar') ? 'الدولة مطلوبة' : 'Country is required');
+        return false;
+    } else {
+        clearFieldError('country');
+        return true;
+    }
+}
+
+
 function validateMessage(input) {
     const value = input.value.trim();
+    const currentLang = localStorage.getItem('language') || 'en';
     if (!value) {
-        showFieldError('message', 'الرسالة مطلوبة');
+        showFieldError('message', (currentLang === 'ar') ? 'الرسالة مطلوبة' : 'Message is required');
         return false;
     } else if (value.length < 10) {
-        showFieldError('message', 'يجب أن تكون الرسالة 10 أحرف على الأقل');
+        showFieldError('message', (currentLang === 'ar') ? 'يجب أن تكون الرسالة 10 أحرف على الأقل' : 'Message must be at least 10 characters long');
         return false;
     } else {
         clearFieldError('message');
@@ -188,6 +233,8 @@ function clearFieldError(fieldName) {
 function clearAllFieldErrors() {
     clearFieldError('name');
     clearFieldError('email');
+    clearFieldError('whatsapp');
+    clearFieldError('country');
     clearFieldError('message');
 }
 
@@ -209,7 +256,7 @@ function showFormMessage(message, type) {
     }, 5000);
 }
 
-function sendEmail(name, email, message) {
+function sendEmail(name, email, whatsapp, country, message) {
     // [!] هام: استبدل هذه بالقيم الحقيقية من حسابك على EmailJS
     const serviceID = 'YOUR_SERVICE_ID';
     const templateID = 'YOUR_TEMPLATE_ID';
@@ -220,6 +267,10 @@ function sendEmail(name, email, message) {
         to_name: 'Mostafa Mhialden',
         message: message,
         reply_to: email,
+        
+        // --- الإضافات الجديدة هنا ---
+        from_whatsapp: whatsapp,
+        from_country: country
     };
     
     return emailjs.send(serviceID, templateID, templateParams);
