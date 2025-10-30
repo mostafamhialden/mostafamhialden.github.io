@@ -43,7 +43,7 @@ const translations = {
     'contactPhone': 'الهاتف',
     'contactWhatsApp': 'WhatsApp',
     'contactLocation': 'الموقع',
-    'contactSubtitle': '... أو تواصل معي مباشرة عبر', // <-- مفتاح جديد
+    'contactSubtitle': '... أو تواصل معي مباشرة عبر',
     'footerRights': '© 2025 مصطفى محي الدين. جميع الحقوق محفوظة.',
     
     // --- (صفحات المشاريع) ---
@@ -68,6 +68,16 @@ const translations = {
     'pluckoFeature4Title': 'التكامل الشامل',
     'pluckoFeature4Desc': 'دمج نظام الرؤية (AI) مع منصة الروبوتات المادية (Robotics) في نظام واحد متكامل وفعال.',
     'pluckoSec4Title': 'التقنيات المستخدمة',
+
+    // --- (إضافة جديدة لمشروع تعلم الآلة) ---
+    'mlSec1Title': 'وصف المشروع',
+    'mlSec2Title': 'الميزات والتقنيات',
+    'mlFeat1Title': 'تحليل البيانات',
+    'mlFeat1Desc': 'استخدام Pandas و Numpy لتنظيف ومعالجة واستكشاف البيانات.',
+    'mlFeat2Title': 'تعلم الآلة',
+    'mlFeat2Desc': 'تطبيق نماذج من Scikit-Learn لمهام مثل الانحدار والتصنيف.',
+    'mlFeat3Title': 'تصوير البيانات',
+    'mlFeat3Desc': 'استخدام Matplotlib و Seaborn لإنشاء رسوم بيانية توضيحية.',
     // ... (أضف باقي مفاتيح صفحات المشاريع هنا) ...
   },
   
@@ -113,7 +123,7 @@ const translations = {
     'contactPhone': 'Phone',
     'contactWhatsApp': 'WhatsApp',
     'contactLocation': 'Location',
-    'contactSubtitle': '... or reach out directly on', // <-- مفتاح جديد
+    'contactSubtitle': '... or reach out directly on',
     'footerRights': '© 2025 Mostafa Mhialden. All rights reserved.',
 
     // --- (Project Pages) ---
@@ -138,35 +148,51 @@ const translations = {
     'pluckoFeature4Title': 'Full Integration',
     'pluckoFeature4Desc': 'Merging the AI vision system with the physical robotics platform into one seamless, functional system.',
     'pluckoSec4Title': 'Technologies Used',
-    // ... (أضف باقي مفاتيح صفحات المشاريع هنا) ...
+
+    // --- (New addition for ML project) ---
+    'mlSec1Title': 'Project Description',
+    'mlSec2Title': 'Features & Technologies',
+    'mlFeat1Title': 'Data Analysis',
+    'mlFeat1Desc': 'Using Pandas and Numpy for data cleaning, manipulation, and exploration.',
+    'mlFeat2Title': 'Machine Learning',
+    'mlFeat2Desc': 'Applying models from Scikit-Learn for tasks like regression and classification.',
+    'mlFeat3Title': 'Data Visualization',
+    'mlFeat3Desc': 'Using Matplotlib and Seaborn to create insightful plots and charts from data.',
+    // ... (add other project page keys) ...
   }
 };
 
-// --- محرك الترجمة (يبقى كما هو، لا تغيير) ---
+// --- محرك الترجمة (لا تعدل هذا الجزء) ---
 document.addEventListener('DOMContentLoaded', () => {
     
     const langToggleButton = document.getElementById('lang-toggle-btn');
 
     function setLanguage(lang) {
+        // 1. Set page language and direction
         document.documentElement.lang = lang;
         document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
+        // 2. Update toggle button text
         if (langToggleButton) {
             langToggleButton.textContent = (lang === 'ar') ? 'English' : 'العربية';
         }
 
+        // 3. Translate all elements with data-key
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.dataset.key;
             if (translations[lang] && translations[lang][key]) {
                 element.textContent = translations[lang][key];
             } else if (translations['en'] && translations['en'][key]) {
-                // إذا لم يوجد المفتاح في اللغة المختارة، استخدم الإنجليزية كاحتياط
+                // Fallback to English if translation is missing
                 element.textContent = translations['en'][key];
             }
         });
+        
+        // 4. Save user's preference
         localStorage.setItem('language', lang);
     }
 
+    // 5. Add click event to the button
     if (langToggleButton) {
         langToggleButton.addEventListener('click', () => {
             const currentLang = localStorage.getItem('language') || 'en';
@@ -175,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 6. Load saved language or default to 'en'
     const savedLang = localStorage.getItem('language') || 'en';
     setLanguage(savedLang);
 });
