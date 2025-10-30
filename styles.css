@@ -366,37 +366,87 @@ html[dir="rtl"] .project-link {
 }
 
 /* --- قسم "تواصل معي" المحدث --- */
-.contact-links-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* (تم الإبقاء على هذا القسم) */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* (تم الإبقاء على هذا القسم) */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* (تم الإبقاء على هذا القسم) */
+.contact-item i {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-item p {
+    color: var(--text-secondary);
+    margin: 0;
+    word-break: break-all;
+}
+.contact-item h3 {
+    color: var(--text-light);
+    margin: 0 0 5px 0;
+}
+
+/* (تم حذف جميع تنسيقات .contact-form, .form-group, .field-error, .form-message) */
+
+/* --- التنسيقات الجديدة للأيقونات --- */
+.contact-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-subtitle {
     font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .contact-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .contact-icon-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background: var(--primary);
     color: white;
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     box-shadow: 0 5px 15px var(--shadow);
 }
 
@@ -407,7 +457,6 @@ html[dir="rtl"] .project-link {
     box-shadow: 0 10px 20px rgba(99, 218, 252, 0.3);
 }
 
-/* (تم حذف جميع تنسيقات .contact-container, .contact-info, .contact-form, .form-group, .field-error, .form-message) */
 
 /* Footer */
 footer {
@@ -512,7 +561,15 @@ html[dir="rtl"] .scroll-to-top {
         gap: 20px;
     }
     
-    /* (تم حذف .contact-container من هنا) */
+    /* تعديل قسم "تواصل معي" للشاشات الصغيرة */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links-wrapper {
+        margin-top: 30px; /* إضافة مسافة فاصلة */
+    }
+
 
     .scroll-to-top {
         bottom: 20px;
@@ -537,5 +594,15 @@ html[dir="rtl"] .scroll-to-top {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        gap: 15px;
+    }
+
+    .contact-icon-link {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
     }
 }

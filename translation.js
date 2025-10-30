@@ -16,7 +16,7 @@ const translations = {
     'btnContact': 'تواصل معي',
     'aboutTitle': 'نبذة عني',
     'aboutP1': 'أنا مبرمج ذكاء اصطناعي حاصل على دبلوم في الذكاء الاصطناعي والروبوتات من DTC. حالياً، أتابع دراسة هندسة تقانة المعلومات في SVU.',
-    'aboutP2': 'لدي خبرة كقائد فريق لمشاريع ذكاء اصطناعي عن بُعد، ومدرب ذكاء اصطناعي للطلاب، ومدرب روبوتات لمبادرات الشباب، إلى جانب عملي الحر في الذكاء الاصطناعي وتطوير التطبيقات.',
+    'aboutP2': 'لدي خبرة كقائد فريق لمشاريع ذكاء اصطناعي عن بُعد، ومدرب ذكاء اصطناعي للطلاب، ومدرب روبوتات لمبادرات الشباب، إلى جانب عملي الحر في الذكاء اصطناعي وتطوير التطبيقات.',
     'skillsTitle': 'المهارات',
     'skill1Title': 'الذكاء الاصطناعي وتعلم الآلة',
     'skill2Title': 'الرؤية الحاسوبية',
@@ -28,7 +28,11 @@ const translations = {
     'projectLink': 'عرض المشروع →',
     // ... (أضف مفاتيح باقي المشاريع هنا بنفسك) ...
     'contactTitle': 'تواصل معي',
-    'contactSubtitle': 'لا تتردد في التواصل معي مباشرة عبر أي من هذه المنصات:', // <-- مفتاح جديد
+    'contactEmail': 'البريد الإلكتروني',
+    'contactPhone': 'الهاتف',
+    'contactWhatsApp': 'WhatsApp',
+    'contactLocation': 'الموقع',
+    'contactSubtitle': '... أو تواصل معي مباشرة عبر', // <-- مفتاح جديد
     'footerRights': '© 2025 مصطفى محي الدين. جميع الحقوق محفوظة.',
     
     // --- (صفحات المشاريع) ---
@@ -83,7 +87,11 @@ const translations = {
     'projectLink': 'View Project →',
     // ... (add other project keys) ...
     'contactTitle': 'Contact Me',
-    'contactSubtitle': 'Feel free to reach out to me directly through any of these platforms:', // <-- مفتاح جديد
+    'contactEmail': 'Email',
+    'contactPhone': 'Phone',
+    'contactWhatsApp': 'WhatsApp',
+    'contactLocation': 'Location',
+    'contactSubtitle': '... or reach out directly on', // <-- مفتاح جديد
     'footerRights': '© 2025 Mostafa Mhialden. All rights reserved.',
 
     // --- (Project Pages) ---
