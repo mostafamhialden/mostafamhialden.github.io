@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+  <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-key="home.metaTitle">Mostafa Mhialden - AI Engineer</title>
+    <meta name="description" content="Portfolio of Mostafa Mhialden, AI engineer working in machine learning, computer vision, robotics and cross-platform app development. Projects in grape-harvesting robotics, AI agents, chatbots, Unity games and Flutter apps.">
+    <meta name="author" content="Mostafa Mhialden">
+    <link rel="canonical" href="https://mostafamhialden.github.io/">
+    <meta name="theme-color" content="#2c394c">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Mostafa Mhialden">
+    <meta property="og:title" content="Mostafa Mhialden - AI Engineer">
+    <meta property="og:description" content="AI engineer working in machine learning, computer vision, robotics and cross-platform app development.">
+    <meta property="og:url" content="https://mostafamhialden.github.io/">
+    <meta property="og:image" content="https://mostafamhialden.github.io/assets/Mostafa_Mhialden.jpg.jpeg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SY">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mostafa Mhialden - AI Engineer">
+    <meta name="twitter:description" content="AI engineer working in machine learning, computer vision, robotics and cross-platform app development.">
+    <meta name="twitter:image" content="https://mostafamhialden.github.io/assets/Mostafa_Mhialden.jpg.jpeg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232c394c'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%2363dafc' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+    <!-- يضبط اللغة والسمة قبل أول رسم لمنع وميض التبديل (FOUC) -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        try {
+          var lang = localStorage.getItem('language');
+          if (!lang) {
+            lang = (navigator.language || 'en').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
+          }
+          d.lang = lang;
+          d.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        } catch (e) { /* localStorage محجوب — نُبقي الافتراضي الإنجليزي */ }
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t && "dark" === 'auto') {
+            t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          if (t) d.setAttribute('data-theme', t);
+        } catch (e) { /* نُبقي الوضع الافتراضي */ }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="theme.css?v=a7187c9d">
+    <link rel="stylesheet" href="styles.css?v=a7187c9d">
+  <link rel="stylesheet" href="sections.css?v=a7187c9d">
+  <link rel="stylesheet" href="ui.css?v=a7187c9d">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mostafa Mhialden",
+    "alternateName": "مصطفى محي الدين",
+    "jobTitle": "AI Engineer",
+    "url": "https://mostafamhialden.github.io/",
+    "image": "https://mostafamhialden.github.io/assets/profile-pic.jpg",
+    "email": "mailto:mostafaatamhialden@gmail.com",
+    "telephone": "+963938020935",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Damascus",
+      "addressCountry": "SY"
+    },
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Robotics",
+      "Natural Language Processing",
+      "Flutter",
+      "Unity 3D"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/mostafa-mhialden-8b950a377",
+      "https://github.com/mostafamhialden",
+      "https://www.instagram.com/mostafa_mhialden",
+      "https://www.facebook.com/share/1A6aXc9ikr/"
+    ]
+  }
+    </script>
+  </head>
+  <body>
+    <a data-key="ui.skipToContent" href="#main" class="skip-link">Skip to content</a>
+
+    <header>
+      <nav aria-label="Main navigation" data-key-attr="aria-label:nav.ariaLabel">
+        <div class="nav-container">
+          <div data-key="site.logo" class="logo">Mostafa Mhialden</div>
+          <ul>
+            <li><a data-key="nav.items.0.label" href="#home">Home</a></li>
+          <li><a data-key="nav.items.1.label" href="#about">About Me</a></li>
+          <li><a data-key="nav.items.2.label" href="#skills">Skills</a></li>
+          <li><a data-key="nav.items.3.label" href="#projects">Projects</a></li>
+          <li><a data-key="nav.items.4.label" href="#contact">Contact</a></li>
+          </ul>
+          <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" data-key-attr="aria-label:ui.themeToLight">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+          </button>
+          <button id="lang-toggle-btn" class="lang-btn">العربية</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="home" class="home">
+        <div class="home-content">
+          <img src="assets/Mostafa_Mhialden.jpg?v=a7187c9d" width="280" height="280" decoding="async" alt="Portrait of Mostafa Mhialden" data-key-attr="alt:home.photoAlt">
+          <div class="home-text">
+            <h1 data-key="home.heading">I am Mostafa Mhialden, AI Engineer</h1>
+            <p data-key="home.subtitle">AI programmer with a strong background in software development and machine learning, passionate about solving real-world problems via innovative and scalable AI solutions.</p>
+            <a data-key="home.ctaLabel" href="#contact" class="btn">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 data-key="about.heading" class="section-title">About Me</h2>
+        <div class="about-content">
+          <p data-key="about.paragraphs.0">I am an AI programmer holding a diploma in Artificial Intelligence and Robotics from DTC. Currently, I am pursuing a degree in Information Technology Engineering at SVU.</p>
+        <p data-key="about.paragraphs.1">I have experience as a team leader for remote AI projects, an AI trainer for students, and a robotics coach for youth initiatives, alongside my freelance work in AI and application development.</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 data-key="skills.heading" class="section-title">Skills</h2>
+        <div class="skills-container">
+          <div class="skill-card">
+            <i class="fas fa-brain" aria-hidden="true"></i>
+            <h3 data-key="skills.items.0.title">AI &amp; Machine Learning</h3>
+            <p data-key="skills.items.0.desc">Scikit-Learn, TensorFlow, Keras, Pandas, Numpy</p>
+          </div>
+        <div class="skill-card">
+            <i class="fas fa-eye" aria-hidden="true"></i>
+            <h3 data-key="skills.items.1.title">Computer Vision</h3>
+            <p data-key="skills.items.1.desc">OpenCV, Object Detection, Image Classification, Segmentation</p>
+          </div>
+        <div class="skill-card">
+            <i class="fas fa-robot" aria-hidden="true"></i>
+            <h3 data-key="skills.items.2.title">Robotics &amp; IoT</h3>
+            <p data-key="skills.items.2.desc">Kinematics (FK/IK), Arduino, ESP, Raspberry Pi, LEGO SPIKE</p>
+          </div>
+        <div class="skill-card">
+            <i class="fas fa-language" aria-hidden="true"></i>
+            <h3 data-key="skills.items.3.title">NLP &amp; Search</h3>
+            <p data-key="skills.items.3.desc">Sentiment Analysis, Expert Systems, Smart Search (A*, BFS, DFS)</p>
+          </div>
+        <div class="skill-card">
+            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+            <h3 data-key="skills.items.4.title">App Development</h3>
+            <p data-key="skills.items.4.desc">Flutter, Dart, Unity 3D, C#</p>
+          </div>
+        <div class="skill-card">
+            <i class="fas fa-code" aria-hidden="true"></i>
+            <h3 data-key="skills.items.5.title">Programming</h3>
+            <p data-key="skills.items.5.desc">Python, C++, C#, Dart, SQL, Git</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 data-key="projects.heading" class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+          <a class="project-card" href="plucko-robot.html">
+            <div class="project-img"><i class="fas fa-robot" aria-hidden="true"></i></div>
+            <div class="project-content">
+              <h3 data-key="projects.items.0.title">Plucko Grape-Picking Robot</h3>
+              <p data-key="projects.items.0.desc">Developing an integrated robot for automated grape harvesting using computer vision, AI, and advanced control systems.</p>
+              <div class="project-tech"><span data-key="projects.items.0.tech.0" class="tech-tag">Robotics</span><span data-key="projects.items.0.tech.1" class="tech-tag">Computer Vision</span><span data-key="projects.items.0.tech.2" class="tech-tag">AI</span></div>
+              <div class="project-link"><span data-key="projects.linkLabel">View Project →</span></div>
+            </div>
+          </a>
+
+        <a class="project-card" href="ai-agent-project.html">
+            <div class="project-img"><i class="fas fa-tasks" aria-hidden="true"></i></div>
+            <div class="project-content">
+              <h3 data-key="projects.items.1.title">AI Agent for Web Control</h3>
+              <p data-key="projects.items.1.desc">Leading a team to develop an AI Agent capable of controlling and automating web pages by integrating multiple models.</p>
+              <div class="project-tech"><span data-key="projects.items.1.tech.0" class="tech-tag">Python</span><span data-key="projects.items.1.tech.1" class="tech-tag">AI Agent</span><span data-key="projects.items.1.tech.2" class="tech-tag">Team Leader</span></div>
+              <div class="project-link"><span data-key="projects.linkLabel">View Project →</span></div>
+            </div>
+          </a>
+
+        <a class="project-card" href="ai-bots.html">
+            <div class="project-img"><i class="fas fa-comments" aria-hidden="true"></i></div>
+            <div class="project-content">
+              <h3 data-key="projects.items.2.title">Chatbot Development (Bots)</h3>
+              <p data-key="projects.items.2.desc">Building and integrating smart chatbots using LLMs and platforms like Rasa for task automation and interaction.</p>
+              <div class="project-tech"><span data-key="projects.items.2.tech.0" class="tech-tag">LLM</span><span data-key="projects.items.2.tech.1" class="tech-tag">Rasa</span><span data-key="projects.items.2.tech.2" class="tech-tag">Python</span></div>
+              <div class="project-link"><span data-key="projects.linkLabel">View Project →</span></div>
+            </div>
+          </a>
+
+        <a class="project-card" href="unity-games.html">
+            <div class="project-img"><i class="fas fa-gamepad" aria-hidden="true"></i></div>
+            <div class="project-content">
+              <h3 data-key="projects.items.3.title">Unity Game Development</h3>
+              <p data-key="projects.items.3.desc">Designing and developing a range of 3D games using the Unity engine and C#, focusing on physics and gameplay.</p>
+              <div class="project-tech"><span data-key="projects.items.3.tech.0" class="tech-tag">Unity 3D</span><span data-key="projects.items.3.tech.1" class="tech-tag">C#</span><span data-key="projects.items.3.tech.2" class="tech-tag">Game Dev</span></div>
+              <div class="project-link"><span data-key="projects.linkLabel">View Project →</span></div>
+            </div>
+          </a>
+
+        <a class="project-card" href="university-app.html">
+            <div class="project-img"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+            <div class="project-content">
+              <h3 data-key="projects.items.4.title">Flutter Apps &amp; Web Pages</h3>
+              <p data-key="projects.items.4.desc">Building cross-platform mobile apps with Flutter and modern, responsive web pages and dashboards.</p>
+              <div class="project-tech"><span data-key="projects.items.4.tech.0" class="tech-tag">Flutter</span><span data-key="projects.items.4.tech.1" class="tech-tag">Web</span><span data-key="projects.items.4.tech.2" class="tech-tag">Mobile App</span></div>
+              <div class="project-link"><span data-key="projects.linkLabel">View Project →</span></div>
+            </div>
+          </a>
+
+        <a class="project-card" href="ml-notebooks.html">
+            <div class="project-img"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <div class="project-content">
+              <h3 data-key="projects.items.5.title">Machine Learning Projects</h3>
+              <p data-key="projects.items.5.desc">A collection of analytical projects using Jupyter Notebooks, covering prediction, classification, and data analysis.</p>
+              <div class="project-tech"><span data-key="projects.items.5.tech.0" class="tech-tag">Pandas</span><span data-key="projects.items.5.tech.1" class="tech-tag">Scikit-Learn</span><span data-key="projects.items.5.tech.2" class="tech-tag">Jupyter</span></div>
+              <div class="project-link"><span data-key="projects.linkLabel">View Project →</span></div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 data-key="contact.heading" class="section-title">Contact Me</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <div>
+                <h3 data-key="contact.items.0.label">Email</h3>
+                <p><a href="mailto:mostafaatamhialden@gmail.com" dir="ltr"><span data-key="contact.items.0.value">mostafaatamhialden@gmail.com</span></a></p>
+              </div>
+            </div>
+          <div class="contact-item">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <div>
+                <h3 data-key="contact.items.1.label">Phone</h3>
+                <p><a href="tel:+963938020935" dir="ltr"><span data-key="contact.items.1.value">+963938020935</span></a></p>
+              </div>
+            </div>
+          <div class="contact-item">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <div>
+                <h3 data-key="contact.items.2.label">WhatsApp</h3>
+                <p><a href="https://wa.me/963938020935" target="_blank" rel="noopener noreferrer" dir="ltr"><span data-key="contact.items.2.value">+963938020935</span></a></p>
+              </div>
+            </div>
+          <div class="contact-item">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <div>
+                <h3 data-key="contact.items.3.label">Location</h3>
+                <p><span data-key="contact.items.3.value">Syria, Damascus, Dumar</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-links-wrapper">
+            <h3 data-key="contact.socialHeading" class="contact-subtitle">Or contact me directly</h3>
+            <div class="contact-links">
+              <a href="https://wa.me/963938020935" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            <a href="https://www.linkedin.com/in/mostafa-mhialden-8b950a377" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+            <a href="https://github.com/mostafamhialden" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            <a href="https://www.instagram.com/mostafa_mhialden?igsh=MTBkZTlkY3VzYjJqYw==" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+            <a href="https://www.facebook.com/share/1A6aXc9ikr/" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-key="footer.text">© {year} Mostafa Mhialden. All rights reserved.</p>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Scroll to top" data-key-attr="aria-label:ui.scrollTopLabel">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="theme-toggle.js?v=a7187c9d"></script>
+    <script src="translation.js?v=a7187c9d"></script>
+    <script src="script.js?v=a7187c9d"></script>
+  </body>
+  </html>
+  

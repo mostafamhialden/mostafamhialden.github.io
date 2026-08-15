@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+  <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-key="projects.items.3.page.metaTitle">Unity Game Development</title>
+    <meta name="description" content="3D games built with the Unity engine and C#, covering player behaviour scripting, physics simulation, enemy AI and game UI design.">
+    <meta name="author" content="Mostafa Mhialden">
+    <link rel="canonical" href="https://mostafamhialden.github.io/unity-games.html">
+    <meta name="theme-color" content="#2c394c">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Mostafa Mhialden">
+    <meta property="og:title" content="Game Development with Unity &amp; C#">
+    <meta property="og:description" content="A set of 3D games built with Unity and C#, focusing on physics, gameplay and enemy AI.">
+    <meta property="og:url" content="https://mostafamhialden.github.io/unity-games.html">
+    <meta property="og:image" content="https://mostafamhialden.github.io/assets/unity-counter-strike.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Development with Unity &amp; C#">
+    <meta name="twitter:description" content="A set of 3D games built with Unity and C#, focusing on physics, gameplay and enemy AI.">
+    <meta name="twitter:image" content="https://mostafamhialden.github.io/assets/unity-counter-strike.png">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232c394c'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%2363dafc' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+    <!-- يضبط اللغة والسمة قبل أول رسم لمنع وميض التبديل (FOUC) -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        try {
+          var lang = localStorage.getItem('language');
+          if (!lang) {
+            lang = (navigator.language || 'en').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
+          }
+          d.lang = lang;
+          d.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        } catch (e) { /* localStorage محجوب — نُبقي الافتراضي الإنجليزي */ }
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t && "dark" === 'auto') {
+            t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          if (t) d.setAttribute('data-theme', t);
+        } catch (e) { /* نُبقي الوضع الافتراضي */ }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="theme.css?v=a7187c9d">
+    <link rel="stylesheet" href="project-styles.css?v=a7187c9d">
+  <link rel="stylesheet" href="ui.css?v=a7187c9d">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </head>
+  <body>
+
+    <div class="project-nav">
+      <a data-key="ui.backToProjects" href="index.html#projects" class="back-link">← Back to All Projects</a>
+      <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" data-key-attr="aria-label:ui.themeToLight">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+          </button>
+          <button id="lang-toggle-btn" class="lang-btn">العربية</button>
+    </div>
+
+    <main class="container">
+      <h1 data-key="projects.items.3.page.heading" class="title">Game Development with Unity &amp; C#</h1>
+  
+      <div class="image-gallery">
+        <div class="gallery-container">
+          <div class="gallery-slide active">
+            <img src="assets/unity-billiards.png?v=a7187c9d" loading="lazy" alt="Billiards game" data-key-attr="alt:projects.items.3.page.gallery.0.alt">
+          </div>
+        <div class="gallery-slide">
+            <img src="assets/unity-counter-strike.png?v=a7187c9d" loading="lazy" alt="Shooter game" data-key-attr="alt:projects.items.3.page.gallery.1.alt">
+          </div>
+        <div class="gallery-slide">
+            <img src="assets/unity-crazy-ball.png?v=a7187c9d" loading="lazy" alt="Crazy Ball game" data-key-attr="alt:projects.items.3.page.gallery.2.alt">
+          </div>
+        </div>
+        <button class="gallery-nav gallery-prev" aria-label="Previous slide" data-key-attr="aria-label:ui.galleryPrev"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="gallery-nav gallery-next" aria-label="Next slide" data-key-attr="aria-label:ui.galleryNext"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="gallery-dots"></div>
+      </div>
+  
+      <section class="section">
+        <h2 data-key="projects.items.3.page.sections.0.heading">Description</h2>
+        <p data-key="projects.items.3.page.sections.0.body">A set of projects in 3D game development using the popular Unity engine and the C# programming language. These projects focus on different aspects of game development, including player behaviour scripting, physics, enemy AI, and user interface design.</p>
+      </section>
+
+    <section class="section">
+        <h2 data-key="projects.items.3.page.sections.1.heading">Games Developed</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bowling-ball" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.3.page.sections.1.items.0.title">Billiards Game</h3>
+            <p data-key="projects.items.3.page.sections.1.items.0.desc">A physics simulation of billiards focused on ball interaction and collision calculations.</p>
+          </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-crosshairs" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.3.page.sections.1.items.1.title">Shooter Game (Counter Strike)</h3>
+            <p data-key="projects.items.3.page.sections.1.items.1.desc">A first-person shooter prototype featuring player movement, shooting, and simple enemy AI.</p>
+          </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-futbol" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.3.page.sections.1.items.2.title">Crazy Ball</h3>
+            <p data-key="projects.items.3.page.sections.1.items.2.desc">A platformer built around steering a ball through varied obstacles, focused on level design and precise control.</p>
+          </div>
+        </div>
+      </section>
+
+    <section class="section">
+        <h2 data-key="projects.items.3.page.sections.2.heading">Technologies Used</h2>
+  
+  
+        <ul>
+          <li data-key="projects.items.3.page.sections.2.items.0.text">Unity 3D Game Engine</li>
+        <li data-key="projects.items.3.page.sections.2.items.1.text">C# Programming</li>
+        <li data-key="projects.items.3.page.sections.2.items.2.text">Game Physics</li>
+        <li data-key="projects.items.3.page.sections.2.items.3.text">3D Modeling &amp; Animation (Basics)</li>
+        <li data-key="projects.items.3.page.sections.2.items.4.text">UI/UX Design for Games</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="theme-toggle.js?v=a7187c9d"></script>
+    <script src="translation.js?v=a7187c9d"></script>
+    <script src="project-script.js?v=a7187c9d"></script>
+  </body>
+  </html>
+  

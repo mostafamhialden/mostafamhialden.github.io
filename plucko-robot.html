@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+  <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-key="projects.items.0.page.metaTitle">Plucko Grape-Picking Robot</title>
+    <meta name="description" content="Plucko: an integrated robot for automated grape harvesting, combining a custom mechanical arm with a deep-learning computer vision system for grape detection.">
+    <meta name="author" content="Mostafa Mhialden">
+    <link rel="canonical" href="https://mostafamhialden.github.io/plucko-robot.html">
+    <meta name="theme-color" content="#2c394c">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Mostafa Mhialden">
+    <meta property="og:title" content="Plucko Grape-Picking Robot">
+    <meta property="og:description" content="An integrated robot for automated grape harvesting using computer vision, AI and advanced control systems.">
+    <meta property="og:url" content="https://mostafamhialden.github.io/plucko-robot.html">
+    <meta property="og:image" content="https://mostafamhialden.github.io/assets/plucko-design.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plucko Grape-Picking Robot">
+    <meta name="twitter:description" content="An integrated robot for automated grape harvesting using computer vision, AI and advanced control systems.">
+    <meta name="twitter:image" content="https://mostafamhialden.github.io/assets/plucko-design.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232c394c'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%2363dafc' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+    <!-- يضبط اللغة والسمة قبل أول رسم لمنع وميض التبديل (FOUC) -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        try {
+          var lang = localStorage.getItem('language');
+          if (!lang) {
+            lang = (navigator.language || 'en').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
+          }
+          d.lang = lang;
+          d.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        } catch (e) { /* localStorage محجوب — نُبقي الافتراضي الإنجليزي */ }
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t && "dark" === 'auto') {
+            t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          if (t) d.setAttribute('data-theme', t);
+        } catch (e) { /* نُبقي الوضع الافتراضي */ }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="theme.css?v=a7187c9d">
+    <link rel="stylesheet" href="project-styles.css?v=a7187c9d">
+  <link rel="stylesheet" href="ui.css?v=a7187c9d">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </head>
+  <body>
+
+    <div class="project-nav">
+      <a data-key="ui.backToProjects" href="index.html#projects" class="back-link">← Back to All Projects</a>
+      <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" data-key-attr="aria-label:ui.themeToLight">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+          </button>
+          <button id="lang-toggle-btn" class="lang-btn">العربية</button>
+    </div>
+
+    <main class="container">
+      <h1 data-key="projects.items.0.page.heading" class="title">Plucko AI Grape-Picking Robot</h1>
+  
+      <div class="image-gallery">
+        <div class="gallery-container">
+          <div class="gallery-slide active">
+            <video src="assets/plucko-demo.mp4?v=a7187c9d" controls muted loop playsinline preload="none" poster="assets/plucko-design.jpg?v=a7187c9d"></video>
+          </div>
+        <div class="gallery-slide">
+            <img src="assets/plucko-design.jpg?v=a7187c9d" loading="lazy" alt="Robot mechanical design" data-key-attr="alt:projects.items.0.page.gallery.1.alt">
+          </div>
+        <div class="gallery-slide">
+            <img src="assets/grape-augmentation.jpg?v=a7187c9d" loading="lazy" alt="Data augmentation example" data-key-attr="alt:projects.items.0.page.gallery.2.alt">
+          </div>
+        <div class="gallery-slide">
+            <img src="assets/grape-training.jpg?v=a7187c9d" loading="lazy" alt="Model training process" data-key-attr="alt:projects.items.0.page.gallery.3.alt">
+          </div>
+        </div>
+        <button class="gallery-nav gallery-prev" aria-label="Previous slide" data-key-attr="aria-label:ui.galleryPrev"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="gallery-nav gallery-next" aria-label="Next slide" data-key-attr="aria-label:ui.galleryNext"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="gallery-dots"></div>
+      </div>
+  
+      <section class="section">
+        <h2 data-key="projects.items.0.page.sections.0.heading">Description: The Problem &amp; Solution</h2>
+        <p data-key="projects.items.0.page.sections.0.body">Grape harvesting is a labor-intensive and delicate process. "Plucko" is designed to fully automate this task using AI and robotics. I contributed to all aspects of the project, from mechanical design to developing the robot's "eyes"—an advanced computer vision system for grape detection.</p>
+      </section>
+
+    <section class="section">
+        <h2 data-key="projects.items.0.page.sections.1.heading">Key Feature: The AI Vision System</h2>
+        <p data-key="projects.items.0.page.sections.1.intro">To power the robot, a precise vision system was essential. Based on work documented in the Grape Detection Project, the process included:</p>
+        <p><a href="https://github.com/mostafamhialden/Graduation-project" target="_blank" rel="noopener noreferrer"><span data-key="projects.items.0.page.sections.1.link.label">github.com/mostafamhialden/Graduation-project</span></a></p>
+        <ul>
+          <li><strong data-key="projects.items.0.page.sections.1.items.0.term">Data Collection:</strong> <span data-key="projects.items.0.page.sections.1.items.0.desc">Gathering an initial dataset of grape images in various environments.</span></li>
+        <li><strong data-key="projects.items.0.page.sections.1.items.1.term">Data Annotation:</strong> <span data-key="projects.items.0.page.sections.1.items.1.desc">Manually annotating thousands of images to accurately label grape clusters.</span></li>
+        <li><strong data-key="projects.items.0.page.sections.1.items.2.term">Data Augmentation:</strong> <span data-key="projects.items.0.page.sections.1.items.2.desc">Applying techniques (cropping, rotation, lighting changes) to increase data volume and ensure model robustness.</span></li>
+        </ul>
+      </section>
+
+    <section class="section">
+        <h2 data-key="projects.items.0.page.sections.2.heading">Features &amp; Technologies</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.0.page.sections.2.items.0.title">Mechanical Design</h3>
+            <p data-key="projects.items.0.page.sections.2.items.0.desc">Designing the robot's chassis and arm, applying Forward/Inverse Kinematics (FK/IK).</p>
+          </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.0.page.sections.2.items.1.title">Deep Learning Detection</h3>
+            <p data-key="projects.items.0.page.sections.2.items.1.desc">Training and experimenting with multiple deep learning models to achieve high-accuracy detection in varied conditions.</p>
+          </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.0.page.sections.2.items.2.title">Control Systems</h3>
+            <p data-key="projects.items.0.page.sections.2.items.2.desc">Developing intelligent control systems linking "vision" (input) to the robotic arm's "action" (output).</p>
+          </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-link" aria-hidden="true"></i></div>
+            <h3 data-key="projects.items.0.page.sections.2.items.3.title">Full Integration</h3>
+            <p data-key="projects.items.0.page.sections.2.items.3.desc">Merging the AI vision system with the physical robotics platform into one seamless, functional system.</p>
+          </div>
+        </div>
+      </section>
+
+    <section class="section">
+        <h2 data-key="projects.items.0.page.sections.3.heading">Technologies Used</h2>
+  
+  
+        <ul>
+          <li data-key="projects.items.0.page.sections.3.items.0.text">Python (Core Development)</li>
+        <li data-key="projects.items.0.page.sections.3.items.1.text">OpenCV (Image Processing)</li>
+        <li data-key="projects.items.0.page.sections.3.items.2.text">TensorFlow / Keras (Deep Learning)</li>
+        <li data-key="projects.items.0.page.sections.3.items.3.text">Robotics (Control Systems, Kinematics)</li>
+        <li data-key="projects.items.0.page.sections.3.items.4.text">3D Printing (Prototyping)</li>
+        <li data-key="projects.items.0.page.sections.3.items.5.text">Data Annotation &amp; Augmentation</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="theme-toggle.js?v=a7187c9d"></script>
+    <script src="translation.js?v=a7187c9d"></script>
+    <script src="project-script.js?v=a7187c9d"></script>
+  </body>
+  </html>
+  

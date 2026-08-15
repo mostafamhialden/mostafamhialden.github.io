@@ -1,0 +1,50 @@
+/* ملف مولَّد آلياً من content.json — لا تعدّله يدوياً.
+   المصدر الوحيد لمتغيّرات السمة. تستورده كل صفحات الموقع قبل بقية
+   أوراق التنسيق، بحيث لا تُعرَّف الألوان مرتين. */
+
+:root {
+  --bg-dark: #020008;
+  --nav-bg: #2c394c;
+  --primary: #1d719d;
+  --accent: #63dafc;
+  --text-secondary: #a0969a;
+  --extra: #5b3f3a;
+  --text-light: #e6e6e6;
+  --shadow: #0000004c;
+  --success: #4caf50;
+  --error: #f44336;
+}
+
+:root[data-theme="light"] {
+  --bg-dark: #f2f5f9;
+  --nav-bg: #ffffff;
+  --primary: #155e7e;
+  --accent: #0a6c8c;
+  --text-secondary: #4a5764;
+  --extra: #7a5450;
+  --text-light: #141c26;
+  --shadow: #0f172a26;
+  --success: #2e7d32;
+  --error: #c62828;
+}
+
+:root[data-theme="dark"] {
+  --bg-dark: #020008;
+  --nav-bg: #2c394c;
+  --primary: #1d719d;
+  --accent: #63dafc;
+  --text-secondary: #a0969a;
+  --extra: #5b3f3a;
+  --text-light: #e6e6e6;
+  --shadow: #0000004c;
+  --success: #4caf50;
+  --error: #f44336;
+}
+
+/* الانتقال بين الوضعين — يُلغى لمن يفضّل تقليل الحركة */
+@media (prefers-reduced-motion: no-preference) {
+  body, nav, header, .skill-card, .project-card, .custom-card,
+  .timeline-body, .contact-item, footer {
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+  }
+}
