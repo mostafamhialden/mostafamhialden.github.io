@@ -1,0 +1,499 @@
+/* متغيّرات السمة تُعرَّف في theme.css المرتبط قبل هذا الملف.
+   كانت مكرّرة هنا بصيغة سداسية عشرية وناقصة أربعة متغيّرات، فكان أي تعديل
+   على السمة يحتاج تحريرين ويجنح أحدهما عن الآخر. */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- شريط التنقل في صفحة المشروع --- */
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* للتجاوب */
+}
+
+.back-link {
+    margin: 0;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.lang-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent);
+    color: var(--nav-bg);
+}
+/* --- نهاية شريط التنقل --- */
+
+
+.title {
+  text-align: center;
+  color: var(--accent);
+  margin: 40px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(99, 218, 252, 0.3);
+}
+
+.section {
+  background: rgba(44, 57, 76, 0.7);
+  padding: 40px;
+  margin: 40px 0;
+  border-radius: 15px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+html[dir="rtl"] .section {
+    border-left: none;
+    border-right: 4px solid var(--accent);
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+.section h2 {
+  color: var(--accent);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  padding: 12px 0;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 35px; /* LTR */
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(99, 218, 252, 0.1);
+  transition: color 0.3s ease;
+}
+
+html[dir="rtl"] .section li {
+    padding-left: 0;
+    padding-right: 35px;
+}
+
+.section li:hover {
+  color: var(--accent);
+}
+
+.section li:before {
+  content: "▸";
+  color: var(--accent);
+  position: absolute;
+  left: 0; /* LTR */
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+html[dir="rtl"] .section li:before {
+    left: auto;
+    right: 0;
+}
+
+.section li:hover:before {
+  transform: translateX(5px); /* LTR */
+}
+
+html[dir="rtl"] .section li:hover:before {
+  transform: translateX(-5px); /* RTL */
+}
+
+.section p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.section p a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.section p a:hover {
+    text-decoration: underline;
+}
+
+/* Image Gallery */
+.image-gallery {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.gallery-container {
+  position: relative;
+  height: 600px;
+  background: linear-gradient(135deg, var(--nav-bg) 0%, #2a3647 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  transform: scale(0.9);
+}
+
+.gallery-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+}
+
+.gallery-slide.prev-slide {
+  opacity: 0.4;
+  transform: translateX(-80%) scale(0.8); /* LTR */
+  z-index: 2;
+  filter: blur(2px);
+}
+
+.gallery-slide.next-slide {
+  opacity: 0.4;
+  transform: translateX(80%) scale(0.8); /* LTR */
+  z-index: 2;
+  filter: blur(2px);
+}
+
+html[dir="rtl"] .gallery-slide.prev-slide {
+    transform: translateX(80%) scale(0.8);
+}
+html[dir="rtl"] .gallery-slide.next-slide {
+    transform: translateX(-80%) scale(0.8);
+}
+
+.gallery-slide img,
+.gallery-slide video {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  border: 3px solid rgba(99, 218, 252, 0.1);
+  transition: all 0.3s ease;
+}
+
+.gallery-slide.active img,
+.gallery-slide.active video {
+  border-color: rgba(99, 218, 252, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--primary) 0%, #1a5276 100%);
+  color: white;
+  border: none;
+  width: 70px;
+  height: 120px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
+  box-shadow: 0 8px 25px rgba(29, 113, 157, 0.4);
+}
+
+.gallery-nav:hover {
+  background: linear-gradient(135deg, var(--accent) 0%, #1d719d 100%);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 12px 30px rgba(99, 218, 252, 0.5);
+  width: 80px;
+}
+
+.gallery-prev { left: 20px; } /* LTR */
+.gallery-next { right: 20px; } /* LTR */
+
+html[dir="rtl"] .gallery-prev { right: 20px; left: auto; }
+html[dir="rtl"] .gallery-next { left: 20px; right: auto; }
+
+/* الأسهم تُعكس مع الاتجاه. كانت بعض الصفحات تثبّت السهم المعكوس في الترميز،
+   فيصبح خاطئاً لحظة تبديل الصفحة إلى الإنجليزية. */
+html[dir="rtl"] .gallery-nav i {
+  transform: scaleX(-1);
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 15px;
+  background: rgba(44, 57, 76, 0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.gallery-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+.gallery-counter {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* LTR */
+  background: rgba(44, 57, 76, 0.8);
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 218, 252, 0.2);
+}
+
+html[dir="rtl"] .gallery-counter {
+  left: auto;
+  right: 20px;
+}
+
+/* Features Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, rgba(29, 113, 157, 0.2) 0%, rgba(44, 57, 76, 0.7) 100%);
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(99, 218, 252, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  border-color: rgba(99, 218, 252, 0.4);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+  color: white;
+  box-shadow: 0 8px 20px rgba(29, 113, 157, 0.4);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card h3 {
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-container { height: 400px; }
+  .gallery-nav { width: 50px; height: 80px; }
+  .gallery-nav:hover { width: 55px; }
+  .gallery-prev { left: 10px; } /* LTR */
+  .gallery-next { right: 10px; } /* LTR */
+  html[dir="rtl"] .gallery-prev { right: 10px; left: auto; }
+  html[dir="rtl"] .gallery-next { left: 10px; right: auto; }
+  .title { font-size: 2rem; }
+  .section { padding: 25px; }
+}
+
+@media (max-width: 480px) {
+  .gallery-container { height: 300px; }
+  .gallery-nav { width: 40px; height: 60px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .title { font-size: 1.8rem; }
+  .section { padding: 20px; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* حلقة تبئير واضحة لمستخدمي لوحة المفاتيح */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --- احترام تفضيل تقليل الحركة --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .section:hover,
+  .feature-card:hover,
+  .feature-card:hover .feature-icon,
+  .gallery-nav:hover {
+    transform: none;
+  }
+
+  .gallery-nav:hover {
+    transform: translateY(-50%);
+  }
+}
+
+/* --- تنسيقات الطباعة --- */
+@media print {
+  .project-nav,
+  .gallery-nav,
+  .gallery-dots,
+  .gallery-counter,
+  .lang-btn {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .title,
+  .section h2,
+  .feature-card h3 {
+    color: black;
+  }
+
+  .section,
+  .feature-card {
+    background: none;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    animation: none;
+    break-inside: avoid;
+  }
+
+  .section p,
+  .section li,
+  .feature-card p {
+    color: #333;
+  }
+
+  .gallery-container {
+    height: auto;
+    background: none;
+  }
+
+  .gallery-slide {
+    position: static;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

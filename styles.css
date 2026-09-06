@@ -1,0 +1,749 @@
+/* متغيّرات السمة تُعرَّف في theme.css المرتبط قبل هذا الملف. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* scroll-behavior لا تعمل إلا على عنصر التمرير الجذري — كانت موضوعة على body
+   فكانت معطّلة تماماً. */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* حلقة تبئير واضحة لمستخدمي لوحة المفاتيح على كل العناصر التفاعلية */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* رابط تخطّي المحتوى — مخفي حتى يصله التبئير بمفتاح Tab */
+.skip-link {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -120%);
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 2000;
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translate(-50%, 0);
+}
+
+/* الأقسام تستقبل التبئير برمجياً بعد التنقّل بالمراسي؛ لا نريد حلقة حولها */
+section:focus {
+    outline: none;
+}
+
+/* Navbar */
+nav {
+    background-color: var(--nav-bg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* اللون كان var(--accent) على خلفية var(--primary) = 3.32:1 فقط — رسوب في
+   WCAG AA. الأبيض على نفس الخلفية يعطي 5.38:1، والإشارة اللونية المميّزة
+   يوفّرها الخط السفلي بلون accent في القاعدة أدناه. */
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 80%;
+}
+
+/* --- زر تبديل اللغة --- */
+.lang-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+    margin-left: 15px;
+}
+
+html[dir="rtl"] .lang-btn {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent);
+    color: var(--nav-bg);
+}
+
+
+/* Home section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.home img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    object-fit: cover;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: transform 0.5s ease;
+}
+
+.home img:hover {
+    transform: scale(1.05);
+}
+
+.home-text {
+    max-width: 550px;
+}
+
+.home-text h1 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.home-text h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--primary);
+}
+
+html[dir="rtl"] .home-text h1::after {
+    left: auto;
+    right: 0;
+}
+
+.home-text p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--accent);
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary);
+}
+
+/* About section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Skills section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-card {
+    background: rgba(44, 57, 76, 0.7);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 220px;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 1.3rem;
+}
+
+.skill-card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Projects section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* البطاقة عنصر <a> الآن (كانت <div onclick>) حتى تكون قابلة للتبئير
+   بلوحة المفاتيح ومقروءة لقارئات الشاشة وقابلة للأرشفة. */
+.project-card {
+    background: rgba(44, 57, 76, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.project-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.project-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-align: left;
+}
+
+/* كانت هذه القاعدة تعيد left — نسخة طبق الأصل من القاعدة الأساسية، أي بلا أثر. */
+html[dir="rtl"] .project-link {
+    text-align: right;
+}
+
+/* --- قسم "تواصل معي" المحدث --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start; /* محاذاة العناصر للأعلى */
+}
+
+/* (تم الإبقاء على هذا القسم) */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* (تم الإبقاء على هذا القسم) */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* (تم الإبقاء على هذا القسم) */
+.contact-item i {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-item p {
+    color: var(--text-secondary);
+    margin: 0;
+    /* overflow-wrap بدل word-break: break-all — الأخير كان يقطع البريد
+       الإلكتروني في منتصف الكلمة حتى حين يتّسع السطر. */
+    overflow-wrap: anywhere;
+}
+
+.contact-item p a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.contact-item p a:hover,
+.contact-item p a:focus-visible {
+    color: var(--accent);
+    text-decoration: underline;
+}
+.contact-item h3 {
+    color: var(--text-light);
+    margin: 0 0 5px 0;
+}
+
+/* (تم حذف جميع تنسيقات .contact-form, .form-group, .field-error, .form-message) */
+
+/* --- التنسيقات الجديدة للأيقونات --- */
+.contact-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* البدء من الأعلى */
+    height: 100%; /* لملء ارتفاع الشبكة */
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.6rem;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.contact-icon-link:hover {
+    background: var(--accent);
+    color: var(--nav-bg);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(99, 218, 252, 0.3);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--nav-bg);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* (تم حذف .social-links) */
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    border: none;
+    font-size: 1.2rem;
+}
+html[dir="rtl"] .scroll-to-top {
+    left: 30px;
+    right: auto;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* بدون تغيير لون الأيقونة كانت تصبح بيضاء على خلفية سماوية فاتحة = 1.62:1،
+   أي غير مرئية عملياً. nav-bg على accent يعطي 7.22:1. */
+.scroll-to-top:hover {
+    background: var(--accent);
+    color: var(--nav-bg);
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .lang-btn {
+        margin-top: 15px;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-text h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .home {
+        padding: 60px 20px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* تعديل قسم "تواصل معي" للشاشات الصغيرة */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links-wrapper {
+        margin-top: 30px; /* إضافة مسافة فاصلة */
+    }
+
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    html[dir="rtl"] .scroll-to-top {
+      left: 20px;
+      right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .home img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .home-text h1 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        gap: 15px;
+    }
+
+    .contact-icon-link {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+}
+
+/* --- احترام تفضيل تقليل الحركة --- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .home img:hover,
+    .skill-card:hover,
+    .project-card:hover,
+    .contact-icon-link:hover,
+    .btn:hover,
+    .scroll-to-top:hover {
+        transform: none;
+    }
+}
+
+/* --- تنسيقات الطباعة (الصفحة تُطبع كسيرة ذاتية) --- */
+@media print {
+    nav,
+    .scroll-to-top,
+    .skip-link,
+    .lang-btn {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    section {
+        padding: 20px 0;
+        break-inside: avoid;
+    }
+
+    .home img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .section-title,
+    .home-text h1,
+    .project-content h3,
+    .contact-subtitle {
+        color: black;
+    }
+
+    .about-content p,
+    .skill-card p,
+    .project-content p,
+    .contact-item p,
+    .home-text p {
+        color: #333;
+    }
+
+    .skill-card,
+    .project-card {
+        background: none;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .project-img,
+    .tech-tag {
+        background: none;
+        color: black;
+        border: 1px solid #ccc;
+    }
+
+    .project-img {
+        height: auto;
+    }
+
+    footer {
+        background: none;
+        color: black;
+    }
+}
